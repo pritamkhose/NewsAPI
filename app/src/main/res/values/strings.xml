@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World!</string>
+    <string name="app_name">NewsAPI Json</string>
+    <string name="srcurl">https://newsapi.org/v1/sources?language=en</string>
+    <string name="listurl">https://newsapi.org/v1/articles?source=</string>
+    <string name="apiKey">958bb5e1eb564864b7a01f170399aead</string>
+    <string name="createby">#AppDevelop -
+                            Pritam Khose</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="title_activity_news_web">NewsWebActivity</string>
+</resources>

@@ -53,6 +53,9 @@ public class LazyAdapter extends BaseAdapter {
         TextView artist = (TextView)vi.findViewById(R.id.artist); // artist name
         TextView duration = (TextView)vi.findViewById(R.id.duration); // duration
         ImageView thumb_image=(ImageView)vi.findViewById(R.id.list_image); // thumb image
+        title.setTypeface(MainActivity.t4);
+        artist.setTypeface(MainActivity.t2);
+        duration.setTypeface(MainActivity.t3);
 
         HashMap<String, String> hm = new HashMap<String, String>();
         hm = data.get(position);

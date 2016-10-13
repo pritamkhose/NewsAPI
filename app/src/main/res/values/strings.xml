@@ -6,6 +6,7 @@
     <string name="listurl">https://newsapi.org/v1/articles?source=</string>
     <string name="apiKey">958bb5e1eb564864b7a01f170399aead</string>
     <string name="createby">Apps Develop - Pritam Khose</string>
+    <string name="netErr">No Internet Connection... Try again later</string>
     <string name="title_activity_news">NewsActivity</string>
     <string name="title_activity_news_web">NewsWebActivity</string>
 </resources>

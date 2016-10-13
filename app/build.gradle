@@ -4,8 +4,8 @@ android {
     compileSdkVersion 23
     buildToolsVersion '21.1.2'
     defaultConfig {
-        applicationId "newsapi.pritam.com.newsapi"
-        minSdkVersion 16
+        applicationId "com.pritam.newsapi"
+        minSdkVersion 17
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"

@@ -53,7 +53,7 @@ public class LazyAdapter extends BaseAdapter {
         TextView artist = (TextView)vi.findViewById(R.id.artist); // artist name
         TextView duration = (TextView)vi.findViewById(R.id.duration); // duration
         ImageView thumb_image=(ImageView)vi.findViewById(R.id.list_image); // thumb image
-        title.setTypeface(MainActivity.t4);
+
         artist.setTypeface(MainActivity.t2);
         duration.setTypeface(MainActivity.t3);
 
@@ -62,12 +62,14 @@ public class LazyAdapter extends BaseAdapter {
 
         // Setting all values in listview
         if(activity instanceof MainActivity) {
+            title.setTypeface(MainActivity.t4);
             title.setText(hm.get(str[0]));
             artist.setText(hm.get(str[1]));
             duration.setText(hm.get(str[2]));
             imageLoader.DisplayImage(hm.get(str[3]), thumb_image);
         }
         else {
+            title.setTypeface(MainActivity.t2);
             title.setText(hm.get(str1[0]));
             artist.setText(hm.get(str1[1]));
             duration.setText("");//duration.setText(hm.get(str1[2]));

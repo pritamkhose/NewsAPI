@@ -11,6 +11,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.pritam.newsapi.utility.Utility;
+
 
 public class NewsWebActivity extends AppCompatActivity {
 
@@ -20,15 +22,17 @@ public class NewsWebActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news_web);
 
         String URL = getIntent().getStringExtra("url").toString();
-
+        if (Utility.isConnected(this)) {
         WebView WebView = (WebView) findViewById(R.id.web);
         WebView.setWebViewClient(new MyBrowser());
         WebView.getSettings().setLoadsImagesAutomatically(true);
         WebView.getSettings().setJavaScriptEnabled(true);
         WebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         WebView.loadUrl(URL);
-
-       // Toast.makeText(this, URL.toString(), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, getResources().getString(R.string.netErr), Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        }
     }
 
     class MyBrowser extends WebViewClient {

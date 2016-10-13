@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.pritam.newsapi.utility.AppConstant;
 import com.pritam.newsapi.utility.HttpHandler;
+import com.pritam.newsapi.utility.Utility;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,8 +56,12 @@ public class NewsActivity extends Activity {
         //Toast.makeText(this, URL.toString(), Toast.LENGTH_SHORT).show();
 
         lv = (ListView) findViewById(R.id.list);
-
-        new GetList().execute();
+        if (Utility.isConnected(this)) {
+            new GetList().execute();
+        } else {
+            Toast.makeText(this, getResources().getString(R.string.netErr), Toast.LENGTH_SHORT).show();
+            onBackPressed();
+        }
     }
 
     @Override

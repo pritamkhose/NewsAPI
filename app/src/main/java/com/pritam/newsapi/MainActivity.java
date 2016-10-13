@@ -2,6 +2,7 @@ package com.pritam.newsapi;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pritam.newsapi.utility.AppConstant;
@@ -39,12 +41,23 @@ public class MainActivity extends Activity {
 
     // URL to get contacts JSON
     private String url;
-
+   // static public Typeface t1,t2,t3,t4,t5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Font path
+        //Typeface t1= Typeface.createFromAsset(this.getResources().getAssets(), "assets/fonts/future.ttf");
+       /* t2= Typeface.createFromAsset(getAssets(), "font/DroidSans.ttf");
+        t3= Typeface.createFromAsset(getAssets(), "font/DroidSans-Bold.ttf");
+        t4= Typeface.createFromAsset(getAssets(), "font/DroidSansMono.ttf");
+        t5= Typeface.createFromAsset(getAssets(), "font/smart watch.ttf");*/
+
+        TextView title = (TextView) findViewById(R.id.createby);
+        //title.setTypeface(t1);
+        ((TextView) findViewById(R.id.createby)).setVisibility(View.GONE);
 
         ((AppConstant) this.getApplication()).setCompressImage(false);
 
@@ -71,7 +84,7 @@ public class MainActivity extends Activity {
             super.onPreExecute();
             // Showing progress dialog
             pDialog = new ProgressDialog(MainActivity.this);
-            pDialog.setMessage("Please wait...\n"+getResources().getString(R.string.createby));
+            pDialog.setMessage("Please wait...");
             pDialog.setCancelable(false);
             pDialog.show();
 
@@ -170,6 +183,7 @@ public class MainActivity extends Activity {
             list.setAdapter(adapter);
 
             findViewById(R.id.list).setVisibility(View.VISIBLE);
+            ((TextView) findViewById(R.id.createby)).setVisibility(View.VISIBLE);
            // findViewById(R.id.progressBar).setVisibility(View.GONE);
 
             // Click event for single list row

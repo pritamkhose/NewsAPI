@@ -3,6 +3,7 @@ package com.pritam.newsapi;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -45,7 +46,7 @@ public class NewsActivity extends Activity {
         //getActionBar().hide();
 
         String id = getIntent().getStringExtra("id").toString();
-        String sort = getIntent().getStringExtra("sort").toString();
+        String sort = getIntent().getStringExtra("sort").toString().split("~")[0];
 
         ((AppConstant) this.getApplication()).setCompressImage(true);
 
@@ -74,7 +75,7 @@ public class NewsActivity extends Activity {
             super.onPreExecute();
             // Showing progress dialog
             pDialog = new ProgressDialog(NewsActivity.this);
-            pDialog.setMessage("Please wait...\n"+getResources().getString(R.string.createby));
+            pDialog.setMessage("Please wait...");
             pDialog.setCancelable(false);
             pDialog.show();
 
